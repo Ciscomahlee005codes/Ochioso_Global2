@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sales Order</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+     <!-- Head Icon -->
+     <link rel="icon" href="./image/logo.jpeg" type="image/x-icon">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Css/sales.css">
+  </head>
+  <body>
+    <div class="grid-container">
+
+      <!-- Header -->
+      <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined" id="openBar">menu</span>
+        </div>
+        <h2 class="header-left">
+           Ochioso Global Link
+        </h2>
+        <div class="header-right">
+          <a href="users.html">
+            <i class="fa-solid fa-circle-user" id="main-user"></i>
+           </a>
+        </div>
+      </header>
+      <!-- End Header -->
+
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="external">
+            <div class="sidebar-brand">
+              <span class="material-icons-outlined">inventory</span> Admin Panel
+            </div>
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()" id="openBar">close</span>
+        </div>
+      
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item-1">
+            <a class="drop-link" href="index.html">
+              <span class="material-icons-outlined">dashboard</span> Dashboard
+            </a>
+          </li>
+          <li class="sidebar-list-item-1">
+            <a class="drop-link" href="users.html"> <i class="fa-solid fa-user"></i> User Management</a>
+          </li>
+          <li class="sidebar-list-item-1 dropdown">
+            <a class="drop-link" href="product.html">
+              <span class="material-icons-outlined">inventory_2</span> Products
+            </a><i class="fa-solid fa-caret-down"></i>
+            <ul class="dropdown-list">
+              <li><a href="china.html"><i class="fa-solid fa-circle-dot"></i> China Plywood</a></li>
+              <li><a href="rongtai.html"><i class="fa-solid fa-circle-dot"></i> Rongtai Plywood</a></li>
+            </ul>
+          </li>
+          <li class="sidebar-list-item-1">
+            <a class="drop-link" href="inventory.html">
+              <span class="material-icons-outlined">fact_check</span> Inventory
+            </a>
+          </li>
+          <li class="sidebar-list-item-1">
+            <a class="drop-link" href="purchase.html">
+              <span class="material-icons-outlined">add_shopping_cart</span> Purchase Stock
+            </a>
+          </li>
+          <li class="sidebar-list-item-1">
+            <a class="drop-link" href="#">
+              <span class="material-icons-outlined">shopping_cart</span> Stock Out
+            </a>
+          </li>
+          <li class="sidebar-list-item-1">
+            <a class="drop-link" href="alert.html">
+              <span class="material-icons-outlined">poll</span> Inventory Alerts
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <!-- End Sidebar -->
+        <!-- Product Table -->
+        <main class="main-container">
+          <h2 style="text-align: center;">Sales Order</h2>
+          <div class="top-headers">
+            <div class="side-btn">
+              <input type="date" name="" id="date">
+          </div>
+          <div class="search-container">
+            <input class="searchBar" type="search" placeholder="Search Product">
+            <button class="add-new"><i class="fas fa-search"></i></button>
+          </div>
+          </div>
+          <div class="dropdown-container">
+            <button class="dropdown-button">Products</button>
+           <div class="dropdown-content">
+            <button id="stockOutButton">Stock Out China Plywood</button><br><br>
+            <button id="stockOutButton2">Stock Out Rongtai Plywood</button>
+           </div>
+        </div>
+        <!-- Modal for Stocking Out Sales -->
+<div id="stockOutModal" class="modal">
+  <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2 style="text-align: center; font-size: 22px;">China Plywood Stock Out</h2>
+      <form id="stockOutForm1">
+          <div class="inputs">
+            <label for="product">Product Name:</label>
+          <input type="text" class="stock-input" id="stock-out-product" name="product" required>
+          
+        </div>
+          <div class="inputs">
+            <label for="categories">Categories Sold:</label>
+          <input type="text" class="stock-input" id="stock-out-categories" name="categories" required>
+          </div>
+          <div class="inputs">
+            <label for="color">Colour Sold:</label>
+          
+          <select class="stock-input" id="stock-out-color" name="color" style="width: 105%;">
+            <option value="white">Colours</option>
+            <option value="white">WHITE</option>
+      <option value="offwhite">OFFWHITE</option>
+      <option value="akala">AKALA</option>
+      <option value="wenge">WENGE</option>
+      <option value="redrose">REDROSE</option>
+      <option value="mansonia">MANSONIA</option>
+      <option value="brown_mansonia">BROWN MANSONIA</option>
+      <option value="pink">PINK</option>
+      <option value="orange">ORANGE</option>
+      <option value="lemon">LEMON</option>
+      <option value="marble_cloud">MARBLE CLOUD</option>
+      <option value="marble_white">MARBLE WHITE</option>
+      <option value="black_marble_gold">BLACK MARBLE GOLD</option>
+      <option value="stripe_wenge">STRIPE WENGE</option>
+      <option value="pink_2">PINK</option>
+      <option value="grey">GREY</option>
+      <option value="dark_grey">DARK GREY</option>
+      <option value="red">RED</option>
+      <option value="cappuccino">CAPPUCCINO</option>
+      <option value="new_akala">NEW AKALA</option>
+      <option value="marble_stone">MARBLE STONE</option>
+      <option value="yellow_marble">YELLOW MARBLE</option>
+      <option value="stripe_ash">STRIPE ASH</option>
+      <option value="mipple">MIPPLE</option>
+      <option value="purple">PURPLE</option>
+      <option value="ceder">CEDER</option>
+      <option value="benin_code">BENIN CODE</option>
+             </select>
+        </div>
+          
+          <div class="inputs">
+            <label for="thickness">Thickness Sold:</label>
+          <input type="text" class="stock-input" id="stock-out-thickness" name="thickness" required>
+          </div>
+          <div class="inputs">
+            <label for="quantity">Quantity Sold:</label>
+          <input type="number" class="stock-input" id="stock-out-quantity" name="quantity" required>
+          </div><br>
+          <button class="submit" id="stock-out-china-btn"type="submit">Stock Out</button>
+      </form>
+  </div>
+</div>
+<div id="stockOutModal2" class="modal">
+  <div class="modal-content">
+      <span id="closeModal2" class="close">&times;</span>
+      <h2 style="text-align: center; font-size: 22px;">Rongtai Plywood Stock Out</h2>
+      <form id="stockOutForm">
+          <div class="inputs">
+            <label for="product">Product Name:</label>
+          <input type="text" class="stock-input" id="Rongtai-stock-out-product" name="product" required>
+          </div>
+          <div class="inputs">
+            <label for="categories">Categories Sold:</label>
+            <input type="text" class="stock-input" id="Rongtai-stock-out-categories" name="categories" required>
+            </div>
+          <div class="inputs">
+            <label for="color">Colour Sold:</label>
+          <select class="stock-input" id="Rongtai-stock-out-color" name="categories" style="width: 100%;">
+            <option value="white">Colours</option>
+            <option value="white">WHITE</option>
+ <option value="offwhite">OFFWHITE</option>
+ <option value="akala">AKALA</option>
+ <option value="wenge">WENGE</option>
+ <option value="redrose">REDROSE</option>
+ <option value="mansonia">MANSONIA</option>
+ <option value="brown_mansonia">BROWN MANSONIA</option>
+ <option value="pink">PINK</option>
+ <option value="orange">ORANGE</option>
+ <option value="lemon">LEMON</option>
+ <option value="marble_cloud">MARBLE CLOUD</option>
+ <option value="marble_white">MARBLE WHITE</option>
+ <option value="black_marble_gold">BLACK MARBLE GOLD</option>
+ <option value="stripe_wenge">STRIPE WENGE</option>
+ <option value="pink_2">PINK</option>
+ <option value="grey">GREY</option>
+ <option value="dark_grey">DARK GREY</option>
+ <option value="red">RED</option>
+ <option value="cappuccino">CAPPUCCINO</option>
+ <option value="new_akala">NEW AKALA</option>
+ <option value="marble_stone">MARBLE STONE</option>
+ <option value="yellow_marble">YELLOW MARBLE</option>
+ <option value="stripe_ash">STRIPE ASH</option>
+ <option value="mipple">MIPPLE</option>
+ <option value="purple">PURPLE</option>
+ <option value="ceder">CEDER</option>
+ <option value="benin_code">BENIN CODE</option>
+           </select>
+             
+        </div>
+          
+          <div class="inputs">
+            <label for="thickness">Thickness Sold:</label>
+          <input type="text" class="stock-input" id="Rongtai-stock-out-thickness" name="thickness" required>
+          </div>
+          <div class="inputs">
+            <label for="quantity">Quantity Sold:</label>
+          <input type="number" class="stock-input" id="Rongtai-stock-out-quantity" name="quantity" required>
+          </div><br>
+          <button class="submit1" id="stock-out-rongtai-btn"type="submit">Stock Out</button>
+      </form>
+  </div>
+</div><br><br>
+         <div class="table-section">
+          <table border="1" id="stock-out-chinaTable">
+            <thead id="myTableHead">
+              <h3>China Imported Products</h3>
+              <tr>
+                <th>S/N</th>
+                <th>Product Name</th>
+                <th>Categories</th>
+                <th>Thickness</th>
+                <th>Colour</th>
+                <th>Quantity</th>
+                <th>Date</th>
+                
+              </tr>
+            </thead>
+            <!-- <tbody> -->
+              
+    <tbody id="stock-out-chinaProducts">
+        <tr><td colspan="6" style="text-align:center;">NO DATA ENTERED</td></tr>
+    </tbody>
+</table>
+
+<h3>Rongtai Products</h3>
+<table border="1" id="stock-out-rongtaiTable">
+    <thead>
+        <tr>
+            <th>S/N</th>
+            <th>Product Name</th>
+            <th>Categories</th>
+            <th>Thickness</th>
+            <th>Colour</th>
+            <th>Quantity</th>
+            <th>Date</th>
+            
+        </tr>
+    </thead>
+    <tbody id="stock-out-rongtaiProducts">
+        <tr><td colspan="6" style="text-align:center;">NO DATA ENTERED</td></tr>
+    </tbody>
+</table>
+
+         </div>
+      </main>
+    </div>
+    
+
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="Js/sales.js"></script>
+    <script type="module" src="Js/product.js"></script>
+    <!-- Internal Javascript -->
+    <script>
+        document.querySelectorAll('.sidebar-list-item-1.dropdown').forEach(item => {
+  item.addEventListener('click', function(e) {
+    // Don't toggle if the link itself is clicked
+    if (e.target.tagName.toLowerCase() === 'a') return;
+
+    // Toggle the active class for the dropdown
+    this.classList.toggle('active');
+  });
+});
+// Droping down the Products Option
+// When the button is clicked, toggle the visibility of both dropdowns
+document.querySelector('.dropdown-button').addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent the click event from closing the dropdown immediately
+            let dropdowns = document.querySelectorAll('.dropdown-content');
+            dropdowns.forEach(function(dropdown) {
+                // Toggle display between block and none
+                dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+            });
+        });
+
+        // Close the dropdowns if the user clicks anywhere outside
+        window.addEventListener('click', function(e) {
+            if (!e.target.closest('.dropdown')) {
+                let dropdowns = document.querySelectorAll('.dropdown-content');
+                dropdowns.forEach(function(dropdown) {
+                    dropdown.style.display = 'none';
+                });
+            }
+        });
+// Stock Out Pop up
+
+// Get the modal and button
+let modal = document.getElementById("stockOutModal");
+let secondModal = document.getElementById("stockOutModal2");
+let btn = document.getElementById("stockOutButton");
+let secondBtn = document.getElementById("stockOutButton2");
+let span = document.getElementById("closeModal");
+let secondSpan = document.getElementById("closeModal2");
+// Open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+secondBtn.onclick = function() {
+    secondModal.style.display = "block";
+}
+
+// Close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+secondSpan.onclick = function() {
+    secondModal.style.display = "none";
+}
+
+// Close the modal if the user clicks outside of the modal
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+window.onclick = function(event) {
+    if (event.target === secondModal) {
+        secondModal.style.display = "none";
+    }
+}
+// Handle form submission (e.g., send data to the backend)
+document.getElementById("stockOutForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    // Get form data
+    const item = document.getElementById("item").value;
+    const quantity = document.getElementById("quantity").value;
+    const reason = document.getElementById("reason").value;
+    
+    // You can now send this data to your backend via an API call
+    console.log(`Item: ${item}, Quantity: ${quantity}, Reason: ${reason}`);
+    
+    // Close the modal after submission
+    modal.style.display = "none";
+    secondModal.style.display = "none";
+});
+
+  </script>
+  </body>
+</html>

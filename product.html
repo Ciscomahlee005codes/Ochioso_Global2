@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Product Page</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <!-- Head Icon -->
+     <link rel="icon" href="./image/logo.jpeg" type="image/x-icon">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Css/product.css">
+    <!-- Internal Css -->
+     <style>
+       
+select {
+  padding: 10px 15px; 
+  border: 2px solid #4f35a1; 
+  border-radius: 5px;
+  background-color: #f9f9f9; 
+  color: #333; 
+  width: 200px; 
+  outline: none; 
+  transition: border 0.3s ease; 
+}
+
+
+select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+
+option {
+  padding: 10px;
+}
+
+
+select:hover {
+  border-color: #4f35a1; 
+}
+
+     </style>
+  </head>
+  <body>
+    <div class="grid-container">
+
+      <!-- Header -->
+      <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined" id="openBar">menu</span>
+        </div>
+        <h2 class="header-left">
+           Ochioso Global Link
+        </h2>
+        <div class="header-right">
+          <a href="users.html">
+            <i class="fa-solid fa-circle-user" id="main-user"></i>
+           </a>
+        </div>
+      </header>
+      <!-- End Header -->
+
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="external">
+            <div class="sidebar-brand">
+              <span class="material-icons-outlined">inventory</span> Admin Panel
+            </div>
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()" id="openBar">close</span>
+        </div>
+      
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item-1">
+            <a class="drop-link" href="index.html">
+              <span class="material-icons-outlined">dashboard</span> Dashboard
+            </a>
+          </li>
+          <li class="sidebar-list-item-1">
+            <a class="drop-link" href="users.html"> <i class="fa-solid fa-user"></i> User Management</a>
+          </li>
+          <li class="sidebar-list-item-1 dropdown">
+            <a class="drop-link" href="#">
+              <span class="material-icons-outlined">inventory_2</span> Products
+            </a><i class="fa-solid fa-caret-down"></i>
+            <ul class="dropdown-list">
+              <li><a href="china.html"><i class="fa-solid fa-circle-dot"></i> China Plywood</a></li>
+              <li><a href="rongtai.html"><i class="fa-solid fa-circle-dot"></i> Rongtai Plywood</a></li>
+            </ul>
+          </li>
+          <li class="sidebar-list-item-1">
+            <a class="drop-link" href="inventory.html">
+              <span class="material-icons-outlined">fact_check</span> Inventory
+            </a>
+          </li>
+          <li class="sidebar-list-item-1">
+            <a class="drop-link" href="purchase.html">
+              <span class="material-icons-outlined">add_shopping_cart</span> Purchase Stock
+            </a>
+          </li>
+          <li class="sidebar-list-item-1">
+            <a class="drop-link" href="sales.html">
+              <span class="material-icons-outlined">shopping_cart</span> Stock Out
+            </a>
+          </li>
+          <li class="sidebar-list-item-1">
+            <a class="drop-link" href="alert.html">
+              <span class="material-icons-outlined">poll</span> Inventory Alerts
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <!-- End Sidebar -->
+        <!-- Product Table -->
+        <main class="main-container">
+          <h2 style="text-align: center;">Inventory List</h2>
+          <div class="product-container">
+             <!-- Add Products Section -->
+     <div class="add-container">
+       <div class="top-head-1">
+         <h3><i class="fa-solid fa-cart-plus"></i> Add Products</h3>
+        </div>
+        <div class="add-content">
+         <h4>Register New Product Here</h4>
+          <button class="add-new" onclick="newProductOpen()">+ Add New Product</button>
+        </div>
+        <!-- Pop up for adding New product -->
+        <div class="pop">
+         <div class="newProduct-container">
+    <div class="addNew-popup" id="newProduct-popup">
+        <form action=""> 
+         <i class="fa-solid fa-xmark" onclick="newProductClose()"></i>
+         <h4 style="text-align: center;">New Product</h4>
+         <select name="" id="specification" style="width: 65%;">
+          <option value="IMPORTED/LOCAL">IMPORTED/LOCAL</option>
+          <option value="CHINA IMPORTED">CHINA IMPORTED</option>
+          <option value="RONGTAI">RONGTAI</option>
+         </select><br><br>
+          <input class="new-input" type="text" id="product-name" placeholder="Product Name"><br><br>
+          <input class="new-input" type="text" name="" id="categories" placeholder="Categories"><br><br>
+          <input class="new-input" type="text" name="" id="thickness" placeholder="Thickness"><br><br>
+          <select name="colors" id="colors" style="width: 65%;">
+           <option value="white">Colours</option>
+           <option value="white">WHITE</option>
+<option value="offwhite">OFFWHITE</option>
+<option value="akala">AKALA</option>
+<option value="wenge">WENGE</option>
+<option value="redrose">REDROSE</option>
+<option value="mansonia">MANSONIA</option>
+<option value="brown_mansonia">BROWN MANSONIA</option>
+<option value="pink">PINK</option>
+<option value="orange">ORANGE</option>
+<option value="lemon">LEMON</option>
+<option value="marble_cloud">MARBLE CLOUD</option>
+<option value="marble_white">MARBLE WHITE</option>
+<option value="black_marble_gold">BLACK MARBLE GOLD</option>
+<option value="stripe_wenge">STRIPE WENGE</option>
+<option value="pink_2">PINK</option>
+<option value="grey">GREY</option>
+<option value="dark_grey">DARK GREY</option>
+<option value="red">RED</option>
+<option value="cappuccino">CAPPUCCINO</option>
+<option value="new_akala">NEW AKALA</option>
+<option value="marble_stone">MARBLE STONE</option>
+<option value="yellow_marble">YELLOW MARBLE</option>
+<option value="stripe_ash">STRIPE ASH</option>
+<option value="mipple">MIPPLE</option>
+<option value="purple">PURPLE</option>
+<option value="ceder">CEDER</option>
+<option value="benin_code">BENIN CODE</option>
+          </select><br><br>
+          <input class="new-input" type="number" name="product-quantity" id="product-quantity" placeholder="Product Quantity"><br><br>
+          <input class="new-input" type="number" name="" id="cost-price" placeholder="Cost Price"><br><br>
+          <input class="new-input" type="number" name="" id="selling-price" placeholder="Selling Price"><br><br>
+          <button class="ok-btn" type="button" onclick="newProductClose()">Add Product</button>
+        </form>
+    </div>
+ </div>
+       </div>
+       <!-- POP UP SECTION ENDS -->
+     </div>
+     <div class="add-container">
+      <div class="top-head-1">
+        <h3><i class="fa-solid fa-archive"></i> Update Products</h3>
+       </div>
+       <div class="add-content">
+        <h3><i class="fa-solid fa-box-archive"></i> Update Current Products</h3>
+  <div class="btn-container"><button class="add-new" onclick="updateProductOpen()">+ Update Product</button></div>
+       </div>
+       <!-- Pop up for adding New product -->
+       <div class="pop">
+        <div class="updateProduct-container">
+    <div class="update-popup" id="updateProduct-popup">
+       <form action=""> 
+        <i class="fa-solid fa-xmark" onclick="updateProductClose()"></i>
+        <h4 style="text-align: center; color: black;">Update Product</h4>
+        <select name="" id="Uspecification" style="width: 65%;">
+          <option value="IMPORTED/LOCAL">IMPORTED/LOCAL</option>
+          <option value="CHINA IMPORTED">CHINA IMPORTED</option>
+          <option value="RONGTAI">RONGTAI</option>
+         </select><br><br>
+        <input class="new-input" type="text" name="" id="Uproduct-name" placeholder="Product-name">
+        <br><br>
+         <input class="new-input" type="text" name="" id="Ucategories" placeholder="Categories"><br><br>
+         <select name="" id="Ucolors" style="width: 65%;">
+          <option value="white">Colours</option>
+          <option value="white">WHITE</option>
+    <option value="offwhite">OFFWHITE</option>
+    <option value="akala">AKALA</option>
+    <option value="wenge">WENGE</option>
+    <option value="redrose">REDROSE</option>
+    <option value="mansonia">MANSONIA</option>
+    <option value="brown_mansonia">BROWN MANSONIA</option>
+    <option value="pink">PINK</option>
+    <option value="orange">ORANGE</option>
+    <option value="lemon">LEMON</option>
+    <option value="marble_cloud">MARBLE CLOUD</option>
+    <option value="marble_white">MARBLE WHITE</option>
+    <option value="black_marble_gold">BLACK MARBLE GOLD</option>
+    <option value="stripe_wenge">STRIPE WENGE</option>
+    <option value="pink_2">PINK</option>
+    <option value="grey">GREY</option>
+    <option value="dark_grey">DARK GREY</option>
+    <option value="red">RED</option>
+    <option value="cappuccino">CAPPUCCINO</option>
+    <option value="new_akala">NEW AKALA</option>
+    <option value="marble_stone">MARBLE STONE</option>
+    <option value="yellow_marble">YELLOW MARBLE</option>
+    <option value="stripe_ash">STRIPE ASH</option>
+    <option value="mipple">MIPPLE</option>
+    <option value="purple">PURPLE</option>
+    <option value="ceder">CEDER</option>
+    <option value="benin_code">BENIN CODE</option>
+         </select><br><br>
+         <input class="new-input" type="number" name="" id="Uproduct-quantity" placeholder="Product Quantity"><br><br>
+         <input class="new-input" type="number" name="" id="Ucost-price" placeholder="Cost Price"><br><br>
+         <input class="new-input" type="number" name="" id="Uselling-price" placeholder="Selling Price"><br><br>
+         <button class="ok-btn" id="update-btn"type="button" onclick="updateProductClose()">Update Product</button>
+       </form>
+    </div>
+    </div>
+      </div>
+      <!-- POP UP SECTION ENDS -->
+    </div>
+     <br><br>
+          </div>
+         <div class="table-section">
+          <!-- Inventory Table -->
+          <!-- <table border="1" id="myTable"> -->
+
+            <!-- HERE MIGHT NEED A MEDIA QUERY -->
+
+            <table border="1" id="chinaTable">
+            <thead id="myTableHead">
+              <h3>China Imported Products</h3>
+              <tr>
+                <th>S/N</th>
+                <th>Product Name</th>
+                <th>Categories</th>
+                <th>Thickness</th>
+                <th>Colour</th>
+                <th>Quantity</th>
+                <th>In Stock</th>
+              </tr>
+            </thead>
+            <!-- <tbody> -->
+              
+    <tbody id="chinaProducts">
+        <tr><td colspan="6" style="text-align:center;">NO DATA ENTERED</td></tr>
+    </tbody>
+</table>
+
+<h3>Rongtai Products</h3>
+<table border="1" id="rongtaiTable">
+    <thead>
+        <tr>
+            <th>S/N</th>
+            <th>Product Name</th>
+            <th>Categories</th>
+            <th>Thickness</th>
+            <th>Colour</th>
+            <th>Quantity</th>
+            <th>In Stock</th>
+        </tr>
+    </thead>
+    <tbody id="rongtaiProducts">
+        <tr><td colspan="6" style="text-align:center;">NO DATA ENTERED</td></tr>
+    </tbody>
+</table>
+
+            </tbody>
+          </table>
+         </div>
+      </main>
+    </div>
+    
+    <!-- TILL THIS PLACE -->
+
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="Js/product.js"></script>
+    <script type="module" src="Js/sales.js"></script>
+    <!-- Internal Javascript -->
+    <script>
+      // Pop Up for Adding New Product
+      let openNewProduct = document.getElementById("newProduct-popup");
+ function newProductOpen() {
+    openNewProduct.classList.add("newProduct-openpopup");
+ }
+ function newProductClose() {
+    openNewProduct.classList.remove("newProduct-openpopup")
+ };
+
+  // Pop Up for Updating Current Product
+  let updateProduct = document.getElementById("updateProduct-popup");
+ function updateProductOpen() {
+    updateProduct.classList.add("newProduct-openpopup");
+ }
+ function updateProductClose() {
+    updateProduct.classList.remove("newProduct-openpopup")
+ };
+
+
+
+// Product Link Toggle
+document.querySelectorAll('.sidebar-list-item-1.dropdown').forEach(item => {
+  item.addEventListener('click', function(e) {
+    // Don't toggle if the link itself is clicked
+    if (e.target.tagName.toLowerCase() === 'a') return;
+
+    // Toggle the active class for the dropdown
+    this.classList.toggle('active');
+  });
+});
+    </script>
+  </body>
+</html>
